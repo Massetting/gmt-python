@@ -313,25 +313,22 @@ couldn’t access the functions).</p>
 <tr class="row-odd"><td><a class="reference internal" href="#gmt.clib.LibGMT.grid_to_vfile" title="gmt.clib.LibGMT.grid_to_vfile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">grid_to_vfile</span></code></a>(grid)</td>
 <td>Store a grid in a GMT virtual file to use as a module input.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt.clib.LibGMT.log_to_file" title="gmt.clib.LibGMT.log_to_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log_to_file</span></code></a>([logfile])</td>
-<td>Set the next API call in this session to log to a file.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt.clib.LibGMT.matrix_to_vfile" title="gmt.clib.LibGMT.matrix_to_vfile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matrix_to_vfile</span></code></a>(matrix)</td>
+<tr class="row-even"><td><a class="reference internal" href="#gmt.clib.LibGMT.matrix_to_vfile" title="gmt.clib.LibGMT.matrix_to_vfile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matrix_to_vfile</span></code></a>(matrix)</td>
 <td>Store a 2d array in a GMT virtual file to use as a module input.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt.clib.LibGMT.open_virtual_file" title="gmt.clib.LibGMT.open_virtual_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">open_virtual_file</span></code></a>(family,&nbsp;geometry,&nbsp;…)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#gmt.clib.LibGMT.open_virtual_file" title="gmt.clib.LibGMT.open_virtual_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">open_virtual_file</span></code></a>(family,&nbsp;geometry,&nbsp;…)</td>
 <td>Open a GMT Virtual File to pass data to and from a module.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt.clib.LibGMT.put_matrix" title="gmt.clib.LibGMT.put_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">put_matrix</span></code></a>(dataset,&nbsp;matrix[,&nbsp;pad])</td>
+<tr class="row-even"><td><a class="reference internal" href="#gmt.clib.LibGMT.put_matrix" title="gmt.clib.LibGMT.put_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">put_matrix</span></code></a>(dataset,&nbsp;matrix[,&nbsp;pad])</td>
 <td>Attach a numpy 2D array to a GMT dataset.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt.clib.LibGMT.put_vector" title="gmt.clib.LibGMT.put_vector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">put_vector</span></code></a>(dataset,&nbsp;column,&nbsp;vector)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#gmt.clib.LibGMT.put_vector" title="gmt.clib.LibGMT.put_vector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">put_vector</span></code></a>(dataset,&nbsp;column,&nbsp;vector)</td>
 <td>Attach a numpy 1D array as a column on a GMT dataset.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt.clib.LibGMT.vectors_to_vfile" title="gmt.clib.LibGMT.vectors_to_vfile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vectors_to_vfile</span></code></a>(*vectors)</td>
+<tr class="row-even"><td><a class="reference internal" href="#gmt.clib.LibGMT.vectors_to_vfile" title="gmt.clib.LibGMT.vectors_to_vfile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vectors_to_vfile</span></code></a>(*vectors)</td>
 <td>Store 1d arrays in a GMT virtual file to use as a module input.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt.clib.LibGMT.write_data" title="gmt.clib.LibGMT.write_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_data</span></code></a>(family,&nbsp;geometry,&nbsp;mode,&nbsp;wesn,&nbsp;…)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#gmt.clib.LibGMT.write_data" title="gmt.clib.LibGMT.write_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_data</span></code></a>(family,&nbsp;geometry,&nbsp;mode,&nbsp;wesn,&nbsp;…)</td>
 <td>Write a GMT data container to a file.</td>
 </tr>
 </tbody>
@@ -734,46 +731,6 @@ GMT module.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="gmt.clib.LibGMT.log_to_file">
-<code class="descclassname">LibGMT.</code><code class="descname">log_to_file</code><span class="sig-paren">(</span><em>logfile=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gmt/clib/core.html#LibGMT.log_to_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gmt.clib.LibGMT.log_to_file" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the next API call in this session to log to a file.</p>
-<p>Use it as a context manager (in a <code class="docutils literal notranslate"><span class="pre">with</span></code> block) to capture the error
-messages from GMT API calls. Mostly useful with <code class="docutils literal notranslate"><span class="pre">GMT_Call_Module</span></code>
-because most others don’t print error messages.</p>
-<p>The log file will be deleted when exiting the <code class="docutils literal notranslate"><span class="pre">with</span></code> block.</p>
-<p>Calls the GMT API function <code class="docutils literal notranslate"><span class="pre">GMT_Handle_Messages</span></code> using
-<code class="docutils literal notranslate"><span class="pre">GMT_LOG_ONCE</span></code> mode (to only log errors from the next API call).
-Only works for a <strong>single API call</strong>, so make calls like
-<code class="docutils literal notranslate"><span class="pre">get_constant</span></code> outside of the <code class="docutils literal notranslate"><span class="pre">with</span></code> block.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>* logfile</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or None</span></dt>
-<dd><p class="first last">The name of the logfile. If <code class="docutils literal notranslate"><span class="pre">None</span></code> (default),
-the file name is automatically generated by the tempfile module.</p>
-</dd>
-</dl>
-</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">LibGMT</span><span class="p">()</span> <span class="k">as</span> <span class="n">lib</span><span class="p">:</span>
-<span class="gp">... </span>    <span class="n">mode</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">get_constant</span><span class="p">(</span><span class="s1">&#39;GMT_MODULE_CMD&#39;</span><span class="p">)</span>
-<span class="gp">... </span>    <span class="k">with</span> <span class="n">lib</span><span class="o">.</span><span class="n">log_to_file</span><span class="p">()</span> <span class="k">as</span> <span class="n">logfile</span><span class="p">:</span>
-<span class="gp">... </span>        <span class="n">call_module</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">get_libgmt_func</span><span class="p">(</span><span class="s1">&#39;GMT_Call_Module&#39;</span><span class="p">)</span>
-<span class="gp">... </span>        <span class="n">status</span> <span class="o">=</span> <span class="n">call_module</span><span class="p">(</span><span class="n">lib</span><span class="o">.</span><span class="n">current_session</span><span class="p">,</span> <span class="s1">&#39;info&#39;</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span>
-<span class="gp">... </span>                             <span class="n">mode</span><span class="p">,</span> <span class="s1">&#39;bogus-file.bla&#39;</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
-<span class="gp">... </span>        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">logfile</span><span class="p">)</span> <span class="k">as</span> <span class="n">flog</span><span class="p">:</span>
-<span class="gp">... </span>            <span class="nb">print</span><span class="p">(</span><span class="n">flog</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
-<span class="go">gmtinfo [ERROR]: Error for input file: No such file (bogus-file.bla)</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="method">
 <dt id="gmt.clib.LibGMT.matrix_to_vfile">
 <code class="descclassname">LibGMT.</code><code class="descname">matrix_to_vfile</code><span class="sig-paren">(</span><em>matrix</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gmt/clib/core.html#LibGMT.matrix_to_vfile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gmt.clib.LibGMT.matrix_to_vfile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Store a 2d array in a GMT virtual file to use as a module input.</p>
@@ -1137,8 +1094,8 @@ non-zero status code.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017, Leonardo Uieda and Paul Wessel.
-      Last updated on Jun 14, 2018.
+        &copy; Copyright 2017-2018, Leonardo Uieda and Paul Wessel.
+      Last updated on Jun 27, 2018.
 
     </p>
   </div>

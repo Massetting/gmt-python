@@ -53,10 +53,6 @@ Methods Documentation
 
 
 
-.. automethod:: LibGMT.log_to_file
-
-
-
 .. automethod:: LibGMT.matrix_to_vfile
 
 

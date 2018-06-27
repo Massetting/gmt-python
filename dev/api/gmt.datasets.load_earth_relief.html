@@ -224,17 +224,17 @@
 first time you invoke this function. Afterwards, it will load the data from
 the cache. So you’ll need an internet connection the first time around.</p>
 <p>These grids can also be accessed by passing in the file name
-<code class="docutils literal notranslate"><span class="pre">'&#64;earth_relief_XXm'</span></code> to any grid plotting/processing function. Higher
-resolution SRTM grids can be accessed by using the <code class="docutils literal notranslate"><span class="pre">'&#64;earth_relief_XXs'</span></code>
-special file names but they cannot be loaded using this function.</p>
+<code class="docutils literal notranslate"><span class="pre">'&#64;earth_relief_XXm'</span></code> or <code class="docutils literal notranslate"><span class="pre">'&#64;earth_relief_XXs'</span></code> to any grid
+plotting/processing function.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
 <dt><strong>resolution</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">The grid resolution. The prefix <code class="docutils literal notranslate"><span class="pre">m</span></code> stands for arc-minute. It can be
-<code class="docutils literal notranslate"><span class="pre">'60m'</span></code>, <code class="docutils literal notranslate"><span class="pre">'30m'</span></code>, <code class="docutils literal notranslate"><span class="pre">'10m'</span></code>, <code class="docutils literal notranslate"><span class="pre">'05m'</span></code>, <code class="docutils literal notranslate"><span class="pre">'02m'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'01m'</span></code>.</p>
+<dd><p class="first last">The grid resolution. The suffix <code class="docutils literal notranslate"><span class="pre">m</span></code> and <code class="docutils literal notranslate"><span class="pre">s</span></code> stand for arc-minute
+and arc-second. It can be <code class="docutils literal notranslate"><span class="pre">'60m'</span></code>, <code class="docutils literal notranslate"><span class="pre">'30m'</span></code>, <code class="docutils literal notranslate"><span class="pre">'10m'</span></code>, <code class="docutils literal notranslate"><span class="pre">'05m'</span></code>,
+<code class="docutils literal notranslate"><span class="pre">'02m'</span></code>, <code class="docutils literal notranslate"><span class="pre">'01m'</span></code>, <code class="docutils literal notranslate"><span class="pre">'30s'</span></code> or <code class="docutils literal notranslate"><span class="pre">'15s'</span></code>.</p>
 </dd>
 </dl>
 </td>
@@ -273,8 +273,8 @@ degrees. Relief is in meters.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017, Leonardo Uieda and Paul Wessel.
-      Last updated on Jun 14, 2018.
+        &copy; Copyright 2017-2018, Leonardo Uieda and Paul Wessel.
+      Last updated on Jun 27, 2018.
 
     </p>
   </div>
